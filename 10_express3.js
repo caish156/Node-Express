@@ -9,6 +9,9 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const server = express();
 
+// data to show in UI
+let name1 = "Radheshyam";
+let name2 = "HareRam";
 // to set view engine as EJS
 server.set("view engine", "ejs");
 
@@ -22,10 +25,22 @@ server.get("/", (req, res) => {
   // to provide info in console on every request with timestamp.
   console.log(timeStamp(), "GET ", "/home");
 });
+
 server.get("/about", (req, res) => {
-  res.render("about");
-  console.log(timeStamp(), "GET ", "/about");
-  // console.log(req);
+  // now send data with render
+  res.render("about", {
+    name1,
+    name2,
+    // go in check inside about.html
+  });
+});
+
+server.get("/student", (req, res) => {
+  let student = ["abc", "def", "geh", "ijk", "lmn", "opq"];
+  res.render("student", {
+    student,
+  });
+  console.log(timeStamp(), "GET ", "/student");
 });
 server.listen(2424, () => {
   console.log("Running on port 2424");
