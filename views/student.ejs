@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <h1>ABOUT PAGE EJS</h1>
-    <p>About Page rendered by ejs teplate</p>
+    <h1>Student PAGE EJS</h1>
+    <p>Student Page rendered by ejs teplate</p>
     <a href="/">HOme</a><br />
-    <a href="/student">Student</a>
-    <hr />
-    <%=name1%>
     <br />
-    <%=name2%>
+    <a href="/about">About</a>
+    <ol>
+      <%student.map((obj)=>{%>
+      <li><%=obj%></li>
+      <%})%>
+    </ol>
   </body>
 </html>

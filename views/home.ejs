@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Here we learn to Recieve data from UI by ejs & express</h1>
+    <h2>1. By Get request</h2>
+    <form action="/addition" method="get">
+      <input type="text" name="snum" placeholder="First Number">
+      <input type="text" name="fnum" placeholder="Second Number">
+      <button>Add</button>
+    </form>
+    <hr />
+    <h2>2. By Post request</h2>
+    <form action="/multi" method="post">
+      <input type="text" name="snum" placeholder="First Number">
+      <input type="text" name="fnum" placeholder="Second Number">
+      <button>Multiply</button>
+    </form>
+    <hr />
+    <h2>3. By Path</h2>
+    <a href="/minus/34/23"><b>send</b></a>
+    <hr />
+  </body>
+</html>
