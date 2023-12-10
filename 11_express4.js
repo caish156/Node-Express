@@ -34,7 +34,7 @@ server.post("/multi", (req, res) => {
   });
 });
 
-// 3. recieve data by GET request
+// 3. recieve data by Path
 server.get("/minus/:x/:y", (req, res) => {
   const { x, y } = req.params;
   let result = x - y;
