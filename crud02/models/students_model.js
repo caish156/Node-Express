@@ -14,17 +14,42 @@ function studentregister(req, res) {
 }
 // Add New Student
 function studentAdd(req, res) {
-  const data = req.body;
+  const formdata = req.body;
+  let ts = Date.now();
+  let date_ob = new Date(ts);
+  const date = `${date_ob.getFullYear()}/${date_ob.getMonth()}/${date_ob.getDate()}`;
+
+  let data = {};
+
+  data.s_id = formdata.s_id ;
+  data.s_name = formdata.s_name ;
+  data.s_image = formdata.s_image || "";
+  data.s_mobile = formdata.s_mobile ;
+  data.s_email = formdata.s_email || "";
+  data.s_faname = formdata.s_faname ;
+  data.s_famobile = formdata.s_famobile;
+  data.s_qualification = formdata.s_qualification;
+  data.s_college = formdata.s_college || "";
+  data.s_semsater = formdata.s_semsater || "";
+  data.s_passout = formdata.s_passout || "";
+  data.s_address = formdata.s_address || "";
+  data.s_city = formdata.s_city;
+  data.s_pincode = formdata.s_pincode;
+  data.s_date = date;
+  data.s_password = formdata.s_password;
+  data.s_active = true;
+  data.s_role = "s";
+  console.log(date);
   pool.query(
-    `insert into itstack_student values('${data.Roll}','${data.Name}','${data.Email}','${data.Mobile}','${data.Education}','${data.Course}','${data.Fname}','${data.City}','${data.Pincode}','${data.Password}');`,
+    `insert into itstack_student values('${data.s_id}','${data.s_name}','${data.s_image}','${data.s_mobile}','${data.s_email}','${data.s_faname}','${data.s_famobile}','${data.s_qualification}','${data.s_college}','${data.s_semsater}','${data.s_passout}','${data.s_address}','${data.s_city}','${data.s_pincode}','${data.s_date}','${data.s_password}','${data.s_active}','${data.s_role}');`,
     (error, results) => {
       if (error) {
         res.render("register", { msg: "Roll number Alredy Exists" });
-        console.log(timestamp(), "POST : Registration Failed");
+        console.log(timestamp(), "POST : Registration Failed", error);
       } else {
         console.log(
           timestamp(),
-          `POST : Registered Sucessfully, New User: '${data.Roll}','${data.Name}' `
+          `POST : Registered Sucessfully, New User: '${data.s_id}','${data.s_name}' `
         );
         res.render("register", { msg: "Registered Sucessfully" });
       }
@@ -34,12 +59,12 @@ function studentAdd(req, res) {
 function studentLogin(req, res) {
   const data = req.body;
   pool.query(
-    `Select * from itstack_student WHERE roll = '${data.roll}' and password = '${data.password}';`,
+    `Select * from itstack_student WHERE roll = '${data.s_id}' and password = '${data.s_password}';`,
     (error, results) => {
       if (results.rowCount == 1) {
         console.log(
           timestamp(),
-          `POST : Login Success, User : ${results.rows[0].name}`
+          `POST : Login Success, User : ${results.rows[0].s_name}`
         );
         res.render("stu_dash", { data: results.rows[0] });
         console.log(timestamp(), "POST : Render to dashboard");
@@ -53,5 +78,22 @@ function studentLogin(req, res) {
     }
   );
 }
+function studentcount(req, res) {
+  pool.query(`Select * from itstack_student;`, (error, results) => {
+    if (error) {
+      console.log(timestamp(), "GET : Student count failed", error.message);
+      res.send({ rows: 999 });
+    } else {
+      console.log(timestamp(), "GET : Student count");
+      res.send({ rows: results.rowCount });
+    }
+  });
+}
 
-export { studentlogin, studentregister, studentAdd, studentLogin };
+export {
+  studentlogin,
+  studentregister,
+  studentAdd,
+  studentLogin,
+  studentcount,
+};
