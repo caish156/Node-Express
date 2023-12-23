@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Here you can check records</h1>
+    <table>
+      <thead>
+        <tr>
+          <td>Roll</td>
+          <td>Name</td>
+          <td>Father's name</td>
+          <td>marks</td>
+        </tr>
+      </thead>
+      <tbody>
+        <%for(rec of data){%>
+        <tr>
+          <td><%=rec.roll%></td>
+          <td><%=rec.name%></td>
+          <td><%=rec.fname%></td>
+          <td><%=rec.marks%></td>
+        </tr>
+        <%}%>
+        <tr></tr>
+      </tbody>
+    </table>
+    <h3><a href="/student">Back </a></h3>
+  </body>
+</html>

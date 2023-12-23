@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Students records</h1>
+    <h3>Add new record</h3>
+    <form action="/student/save" method="post">
+      <input type="text" name="roll" placeholder="Roll Number" /> <br /><br />
+      <input type="text" name="name" placeholder="Name" /><br />
+      <br />
+      <input
+        type="text"
+        name="fname"
+        placeholder="Father's Name"
+      /><br /><br />
+      <input type="number" name="marks" placeholder="Marks" /><br /><br />
+      <button>Submit details</button><br />
+      <br />
+      <br />
+    </form>
+
+    <a href="/student/record">Record page</a>
+  </body>
+</html>

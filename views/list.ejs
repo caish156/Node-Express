@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+  <body style="background-color: black">
+    <h1>Records of student</h1>
+    <Table style="color: rgb(160, 128, 32)">
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%students.map((ob)=>{%>
+        <tr>
+          <td><%=ob.roll%></td>
+          &nbsp;&nbsp;
+          <td><%=ob.name%></td>
+          &nbsp;&nbsp;
+          <td><%=ob.fees%></td>
+          &nbsp;&nbsp;
+          <td><%=ob.Marks%></td>
+          &nbsp;&nbsp;
+        </tr>
+        <br />
+        <%})%>
+
+        <p><%=sclass%></p>
+        <h3><%=sclass%></h3>
+      </tbody>
+    </Table>
+  </body>
+</html>

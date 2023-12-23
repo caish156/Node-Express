@@ -1,0 +1,150 @@
+<%- include ("header.ejs")%>
+
+<link rel="stylesheet" href="/./css/login.css" />
+<link rel="stylesheet" href="/./css/register.css" />
+<link rel="stylesheet" href="/./css/header.css" />
+</head>
+
+  <body>
+     <header class="main-header clearfix" role="header">
+      <div class="logo">
+        <a href="#"><em>Coding</em> School</a>
+      </div>
+      <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+      <nav id="menu" class="main-nav" role="navigation">
+        <ul class="main-menu">
+          <li><a href="/">Home</a></li>
+          
+          <li class="active">
+            <a href="/student/login" class="external">Login/Signup</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+     <div class="form">
+      <form class="formarea" action="/student/add" method="post">
+        <input
+          class="fields"
+          id="rollno"
+          type="text"
+          name="Roll"
+          placeholder="Enrollment Number"
+        />
+        <input
+          class="fields"
+          type="text"
+          name="Name"
+          id="name"
+          placeholder="Full Name"
+          required
+        />
+        <input
+          class="fields"
+          name="Email"
+          type="email"
+          placeholder="Mail ID"
+          required
+        />
+        <input
+          class="fields"
+          name="Mobile"
+          type="number"
+          id="mobile"
+          maxlength="10"
+          minlength="10"
+          placeholder="Mobile No."
+          required
+        />
+        <div class="fields">
+          <label class="label" for="edu">Select Your Education</label>
+          <select name="Education" id="edu" required>
+            <option value="BCA">BCA</option>
+            <option value="B.Com">B.Com</option>
+            <option value="BBA">BBA</option>
+            <option value="BSC">BSC</option>
+            <option value="BA">BA</option>
+            <option value="B.Tech">B.Tech</option>
+          </select>
+        </div>
+        <div class="fields">
+          <label  class="label" for="edu">Select Your Course</label>
+          <select name="Course" id="course" required>
+            <option value="pys">Python(full stack)</option>
+            <option value="jvs">Java(fullstack)</option>
+            <option value="mrs">Mern Stack</option>
+            <option value="mes">Mean Stack</option>
+            <option value="cys">CYber Security</option>
+            <option value="aim">AI & Machine learning</option>
+          </select>
+        </div>
+
+        <input
+          class="fields"
+          name="Fname"
+          type="text"
+          placeholder="Father Name"
+          required
+        />
+        <input
+          class="fields"
+          name="City"
+          type="text"
+          placeholder="city"
+          required
+        />
+        <input
+          class="fields"
+          name="Pincode"
+          maxlength="6"
+          minlength="6"
+          type="text"
+          placeholder="Pincode"
+          required
+        />
+        <input
+          class="fields"
+          name="Password"
+          maxlength="6"
+          minlength="6"
+          type="text"
+          placeholder="Password"
+          required
+        />
+        <input
+          class="fields"
+          maxlength="6"
+          minlength="6"
+          type="text"
+          placeholder="Confirm Password"
+          required
+        />
+        <div
+          id="Generate"
+          class="fields"
+          style="background-color: lightseagreen"
+        >
+          Generate Roll No.
+        </div>
+        <button
+          id="add"
+          type="submit"
+          class="fields"
+          style="background-color: lightseagreen"
+        >
+          Submit
+        </button>
+      </form>
+      <div>
+        <p>
+          <% if (msg) { %>
+            <%= msg%>
+           <a href="/student/login"> <button >GO to Login Page</button></a>
+            <%}%>
+         </p>
+      </div>
+    </div>
+
+<%- include ("footer.ejs")%>
+
+   
+ 

@@ -1,0 +1,51 @@
+<%- include ("header.ejs")%>
+<link rel="stylesheet" href="/./css/templatemo-grad-school.css" />
+<link rel="stylesheet" href="/./css/login.css" />
+<link rel="stylesheet" href="/./css/register.css" />
+</head>
+
+  <body>
+    <!--header-->
+   
+    <header class="main-header clearfix" role="header">
+      <div class="logo">
+        <a href="#"><em>Coding</em> School</a>
+      </div>
+      <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+      <nav id="menu" class="main-nav" role="navigation">
+        <ul class="main-menu">
+          <li><a href="/">Home</a></li>
+          
+          <li class="active">
+            <a href="/student/login" class="external">Login/Signup</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+<div class="title">
+      <header class="" role="header">
+        <h4>Register For <em>Offline Course</em> and get free placement</h4>
+      </header>
+    </div>
+    <div class="main">
+      <div class="login">
+        <form method="post"  action="/student/login">
+          <label for="chk" aria-hidden="true"><%= msg? msg:"Log in"%></label>
+          <input type="Text" name="roll" placeholder="Roll No." required="" />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required=""
+          />
+          <button>Log in</button><button>Forgot Roll no...!</button>
+        </form>
+      </div>
+
+      <div class="signup">
+        <a href="/student/register"><button>signup</button></a>
+      </div>
+    </div>
+<%- include ("footer.ejs")%>

@@ -1,0 +1,25 @@
+{
+  "name": "crud02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "db:deploy": "node models/pgconfig.js",
+    "db:create": "node models/createdatabase.js",
+    "database": "npm run db:deploy && npm run db:create"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "pg": "^8.11.3",
+    "prompt-sync": "^4.2.0"
+  }
+}
