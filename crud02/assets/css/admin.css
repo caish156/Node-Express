@@ -41,5 +41,36 @@ header{
 }
 #sidebar{
     width: 25vw;
-    height: 100%;
+    height: 90vh;
+    border: 1px solid rgb(19, 19, 19);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#mainbar{
+    width: 75vw;
+    height: 90vh;
+    border: 1px solid rgb(14, 13, 13);
+}
+.bullets{
+    display: flex;
+    width: 90%;
+    height: 6vh;
+    background-color: rgb(178, 178, 178);
+    border: 2px solid black;
+    justify-content: center;
+    align-items:center;
+    box-shadow: 5px 5px 10px 1px rgba(61, 59, 59, 0.7);
+}
+.navlink{
+    text-decoration: none;
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+}
+.navlink:hover{
+    color: rgb(0, 0, 0);
+    border: 1px  double salmon;
+   
 }

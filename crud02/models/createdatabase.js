@@ -124,7 +124,8 @@ function databasecreater() {
     A_name varchar(20) NOT NULL,
     A_mail varchar(30) NOT NULL,
     A_mobile varchar(10) NOT NULL,
-    A_password  varchar(16)  NOT NULL
+    A_password  varchar(16)  NOT NULL,
+    A_role varchar(1) NOT NULL
 );`,
     (error, results) => {
       if (error) {
@@ -139,7 +140,8 @@ function databasecreater() {
     C_name varchar(20) NOT NULL,
     C_mail varchar(30) NOT NULL,
     C_mobile varchar(10) NOT NULL,
-    C_password  varchar(16)  NOT NULL
+    C_password  varchar(16)  NOT NULL,
+    C_role varchar(1) NOT NULL
 );`,
     (error, results) => {
       if (error) {

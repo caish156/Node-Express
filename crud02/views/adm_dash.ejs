@@ -3,25 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/./css/admin.css">
+    <link rel="stylesheet" href="/./css/admin.css" />
     <title>Document</title>
   </head>
   <body>
     <div id="main">
       <header>
         <div class="header" id="lefth">
-          <p>Admin Dashboard</p>
+          <p>Admin Dashboard  <b> </b></p>
           <p>WELCOME <%= data.a_name.toUpperCase()%></p>
         </div>
         <div class="header" id="righth">
-          <a href="">Home</a>
-
-          <a href="">Quick view</a>
-          <a href="">Logout</a>
+          <a class="navlink" href="">Home</a>
+          <a class="navlink" href="">Quick view</a>
+          <a class="navlink" href="">Logout</a>
         </div>
       </header>
       <div id="area">
-        <div id="sidebar"></div>
+        <div id="sidebar">
+          <p class="bullets">Enquries</p>
+          <p class="bullets">Students</p>
+          <p class="bullets">Course</p>
+          <p class="bullets">Batches</p>
+          <p class="bullets">Fees</p>
+          <p class="bullets">Faculties</p>
+          <p class="bullets">Counslers</p>
+        </div>
         <div id="mainbar"></div>
       </div>
     </div>
