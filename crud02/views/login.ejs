@@ -32,13 +32,13 @@
       <div class="login">
         <form method="post"  action="/student/login">
           <label for="chk" aria-hidden="true"><%= msg? msg:"Log in"%></label>
-          <input type="Text" name="roll" placeholder="Roll No. or Mobile" required="" />
+          <input type="Text" name="key" placeholder="Roll No. or Mobile" required="" />
 
           <input
             type="password"
-            name="password"
+            name="s_password"
             placeholder="Password"
-            required=""
+            required
           />
           <button>Log in</button><button>Forgot Roll no...!</button>
         </form>

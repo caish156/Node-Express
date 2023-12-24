@@ -21,12 +21,12 @@ function studentAdd(req, res) {
 
   let data = {};
 
-  data.s_id = formdata.s_id ;
-  data.s_name = formdata.s_name ;
+  data.s_id = formdata.s_id;
+  data.s_name = formdata.s_name;
   data.s_image = formdata.s_image || "";
-  data.s_mobile = formdata.s_mobile ;
+  data.s_mobile = formdata.s_mobile;
   data.s_email = formdata.s_email || "";
-  data.s_faname = formdata.s_faname ;
+  data.s_faname = formdata.s_faname;
   data.s_famobile = formdata.s_famobile;
   data.s_qualification = formdata.s_qualification;
   data.s_college = formdata.s_college || "";
@@ -58,9 +58,11 @@ function studentAdd(req, res) {
 }
 function studentLogin(req, res) {
   const data = req.body;
+  console.log(data);
   pool.query(
-    `Select * from itstack_student WHERE roll = '${data.s_id}' and password = '${data.s_password}';`,
+    `Select * from itstack_student WHERE (s_id = '${data.key}' or s_mobile ='${data.key}') and s_password = '${data.s_password}'`,
     (error, results) => {
+      console.log(results);
       if (results.rowCount == 1) {
         console.log(
           timestamp(),

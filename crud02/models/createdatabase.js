@@ -12,7 +12,7 @@ function databasecreater() {
         s_faname VARCHAR (50) NOT NULL,
         s_famobile VARCHAR (10) NOT NULL,
         s_qualification VARCHAR (10) NOT NULL,
-        s_college VARCHAR (20),
+        s_college VARCHAR (50),
         s_semsater VARCHAR (1),
         s_passout  VARCHAR (4),
         s_address VARCHAR (100),

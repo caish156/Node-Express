@@ -5,113 +5,112 @@
 <link rel="stylesheet" href="/./css/header.css" />
 </head>
 
-  <body>
-<header class="main-header clearfix" role="header">
-  <div class="logo">
-    <a href="#"><em>Coding</em> School</a>
-  </div>
-  <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
-  <nav id="menu" class="main-nav" role="navigation">
-    <ul class="main-menu">
-      <li><a href="/">Home</a></li>
+<body>
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><em>Coding</em> School</a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="/">Home</a></li>
 
-      <li class="active">
-        <a href="/student/login" class="external">Login/Signup</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-<div class="form">
-  <form class="formarea" action="/student/add" method="post">
-    <div id="fillup">
-      <input
-        class="fields"
-        id="rollno"
-        type="text"
-        name="s_id"
-        placeholder="Enrollment Number"
-      />
-      <input
-        class="fields"
-        type="text"
-        name="s_name"
-        id="s_name"
-        placeholder="Full Name"
-        required
-      />
-      <input
-        class="fields"
-        type="text"
-        name="s_image"
-         placeholder="Passport photo URL"
-
-      />
-      <input
-        class="fields"
-        name="s_mobile"
-        type="text"
-        id="mobile"
-        maxlength="10"
-        minlength="10"
-        placeholder="Mobile No."
-        required
-      /><input
-        class="fields"
-        name="s_email"
-        type="email"
-        placeholder="Mail ID"
-        required
-      /><input
-        class="fields"
-        name="s_faname"
-        type="text"
-        placeholder="Father Name"
-        required
-      /><input
-        class="fields"
-        name="s_famobile"
-         maxlength="10"
-        minlength="10"
-        type="text"
-        placeholder="Parent's contact"
-        required
-      />
-      <div class="fields">
-        <label class="label" for="edu">Select Your Education</label>
-        <select name="s_qualification" id="edu" required>
-          <option value="10th">10th</option>
-          <option value="12th">12th</option>
-          <option value="BCA">BCA</option>
-          <option value="B.Com">B.Com</option>
-          <option value="BBA">BBA</option>
-          <option value="BSC">BSC</option>
-          <option value="BA">BA</option>
-          <option value="B.Tech">B.Tech</option>
-          <option value="other">other</option>
-        </select>
-      </div>
-      <input
-        class="fields"
-        name="s_college"
-        type="text"
-        placeholder="College Name"
-        required
-      />
-      <div class="fields">
-        <label class="label" for="edu">Select Your Semster</label>
-        <select name="s_semster" id="sem" >
-          <option value="" selected>None</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-        </select>
-      </div>
-      <!-- <div class="fields">
+        <li class="active">
+          <a href="/student/login" class="external">Login/Signup</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="form">
+    <form class="formarea" action="/student/add" method="post">
+      <div id="fillup">
+        <input
+          class="fields"
+          id="rollno"
+          type="text"
+          name="s_id"
+          placeholder="Enrollment Number"
+        />
+        <input
+          class="fields"
+          type="text"
+          name="s_name"
+          id="s_name"
+          placeholder="Full Name"
+          required
+        />
+        <input
+          class="fields"
+          type="text"
+          name="s_image"
+          placeholder="Passport photo URL"
+        />
+        <input
+          class="fields"
+          name="s_mobile"
+          type="text"
+          id="mobile"
+          maxlength="10"
+          minlength="10"
+          placeholder="Mobile No."
+          required
+        /><input
+          class="fields"
+          name="s_email"
+          type="email"
+          placeholder="Mail ID"
+          required
+        /><input
+          class="fields"
+          name="s_faname"
+          type="text"
+          placeholder="Father Name"
+          required
+        /><input
+          class="fields"
+          name="s_famobile"
+          maxlength="10"
+          minlength="10"
+          type="text"
+          placeholder="Parent's contact"
+          required
+        />
+        <div class="fields">
+          <label class="label" for="edu">Select Your Education</label>
+          <select name="s_qualification" id="edu" required>
+            <option value="10th">10th</option>
+            <option value="12th">12th</option>
+            <option value="BCA">BCA</option>
+            <option value="B.Com">B.Com</option>
+            <option value="BBA">BBA</option>
+            <option value="BSC">BSC</option>
+            <option value="BA">BA</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="other">other</option>
+          </select>
+        </div>
+        <input
+          class="fields"
+          name="s_college"
+          type="text"
+          placeholder="College Name"
+          required
+        />
+        <div class="fields">
+          <label class="label" for="edu">Select Your Semster</label>
+          <select name="s_semster" id="sem">
+            <option value="" selected>None</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+        <!-- <div class="fields">
           <label  class="label" for="edu"></label>
           <select name="Course" id="course" required>
             <option value="pys">Python(full stack)</option>
@@ -122,48 +121,68 @@
             <option value="aim">AI & Machine learning</option>
           </select>
         </div> -->
-        <input type="text" name="s_passout" placeholder="passing year">
-      <input
-        class="fields"
-        name="s_address"
-        type="text"
-        placeholder="Address"
-        required
-      />
-      <input
-        class="fields"
-        name="s_password"
-        maxlength="6"
-        minlength="6"
-        type="text"
-        id="pass"
-        placeholder="Password"
-        required
-      />
-      <input
-        class="fields"
-        maxlength="6"
-        minlength="6"
-        type="text"
-        id="confirmpass"
-        placeholder="Confirm Password"
-        required
-      />
-    </div>
+        <input
+          type="text"
+          class="fields"
+          name="s_passout"
+          placeholder="passing year"
+        />
+        <input
+          class="fields"
+          name="s_address"
+          type="text"
+          placeholder="Address"
+         
+        />
+        <input
+          class="fields"
+          name="s_city"
+          type="text"
+          placeholder="City"
+         required
+        />
+        <input
+          class="fields"
+          name="s_pincode"
+          type="text"
+          placeholder="PIncode"
+         required
+        />
+        <input
+          class="fields"
+          name="s_password"
+          maxlength="6"
+          minlength="6"
+          type="text"
+          id="pass"
+          placeholder="Password"
+          required
+        />
+        <input
+          class="fields"
+          maxlength="6"
+          minlength="6"
+          type="text"
+          id="confirmpass"
+          placeholder="Confirm Password"
+          required
+        />
+      </div>
 
-    <div id="submission">
-      <div id="Generate" class="fields">Generate Roll No.</div>
-      <button id="add" type="submit" class="fields">Submit</button>
+      <div id="submission">
+        <div id="Generate" class="fields">Generate Roll No.</div>
+        <button id="add" type="submit" class="fields">Submit</button>
+      </div>
+    </form>
+    <div>
+      <p id="msg">
+        <% if (msg) { %> <%= msg%>
+        <a href="/student/login"> <button>GO to Login Page</button></a>
+        <%}%>
+      </p>
     </div>
-  </form>
-  <div>
-    <p id="msg">
-      <% if (msg) { %> <%= msg%>
-      <a href="/student/login"> <button>GO to Login Page</button></a>
-      <%}%>
-    </p>
   </div>
-</div>
-<script src="/./js/rollnum.js"></script>
+  <script src="/./js/rollnum.js"></script>
 
-<%- include ("footer.ejs")%>
+  <%- include ("footer.ejs")%>
+</body>
