@@ -1,12 +1,12 @@
 import express, { response } from "express";
 import dotenv from "dotenv";
-import student_routes from "./routes/student_routes.js";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import timestamp from "./models/timestamp.js";
-import { adminLogin } from "./routes/admin_routes.js";
+import student_routes, { studentLogin } from "./routes/student_routes.js";
+import admin_routes, { adminLogin } from "./routes/admin_routes.js";
 import { counslerLogin } from "./routes/counsler_routes.js";
-import { studentLogin } from "./routes/student_routes.js";
+import enquiry_routes from './routes/enquiry_routes.js'
 
 const server = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -31,8 +31,6 @@ server.post("/login", (req, res) => {
   const data = req.body;
   console.log(data);
   let user = data.key.substring(0, 3);
-
-  // admin login
   if (user == "Adm") {
     adminLogin(data, res);
   } else if (user == "cls") {
@@ -43,6 +41,8 @@ server.post("/login", (req, res) => {
 });
 
 server.use("/student", student_routes);
+server.use("/admin", admin_routes);
+server.use("/enquiry", enquiry_routes);
 
 server.listen(process.env.port, () => {
   console.log("server listining on port " + process.env.port);

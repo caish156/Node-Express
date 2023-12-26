@@ -1,0 +1,58 @@
+#enqview {
+  border: 2px solid red;
+  width: 100%;
+  height: 90vh;
+  padding: 10px;
+  overflow-y: scroll;
+}
+#enqview table {
+  border: 1px solid gray;
+  /* height: 100%; */
+  width: 100%;
+}
+
+tr {
+  height: 30px;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: lightskyblue;
+}
+#tab tr:hover {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: gray;
+}
+#tab th {
+  font-size: 14px;
+}
+.name {
+  width: 3vw;
+  padding-left: 6px;
+}
+.name {
+  width: 8vw;
+  padding-left: 6px;
+}
+.mobile {
+  width: 8vw;
+  padding-left: 6px;
+}
+.email {
+  width: 15vw;
+  padding-left: 6px;
+}
+.course {
+  width: 4vw;
+  padding-left: 6px;
+}
+
+.date {
+  width: 6vw;
+  padding-left: 6px;
+}
+.act {
+  padding: 10px;
+}
+.act button {
+  width: 50px;
+  height: 18px;
+  background-color: lightsalmon;
+}

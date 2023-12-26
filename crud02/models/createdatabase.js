@@ -34,13 +34,13 @@ function databasecreater() {
   pool.query(
     `CREATE TABLE IF NOT EXISTS enquiry
 (   e_id varchar NOT NULL UNIQUE PRIMARY KEY,
-    e_name varchar (20) NOT NULL,
-    e_mail varchar (30)  NOT NULL,
-    e_mobile varchar (10) NOT NULL,
-    e_qualification varchar(10),
-    e_college varchar(10),
+    e_name varchar (50) NOT NULL,
+    e_mail varchar (50)  NOT NULL,
+    e_mobile varchar (50) NOT NULL,
+    e_qualification varchar(50),
+    e_college varchar(50),
     e_semster varchar(1),
-    e_course varchar (20) NOT NULL,
+    e_course varchar (50) NOT NULL,
     e_date date NOT NULL,
     e_active BOOLEAN  NOT NULL
 );`,

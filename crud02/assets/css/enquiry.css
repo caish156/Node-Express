@@ -1,0 +1,44 @@
+#topmenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 10%;
+  padding: 10px 0px;
+
+}
+#topmenu button {
+  background-color: lightskyblue;
+  border-radius: 5px;
+  width: 6vw;
+}
+#topmenu button:hover {
+  background-color: rgb(88, 136, 165);
+
+}
+#heading{
+    margin-top: 12px;
+    text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 20px;
+  align-items: center;
+}
+.formfield {
+    border: 2px solid black;
+    border-radius: 6px;
+    padding-left: 10px;
+  width: 25vw;
+  height: 5vh;
+  margin: 6px;
+}
+
+form button{
+    border-radius: 12px;
+    margin: 10px;
+    width: 12vw;
+    height: 5vh;
+    background-color: lightseagreen;
+}

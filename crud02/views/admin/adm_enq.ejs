@@ -1,0 +1,102 @@
+<%- include ("../admin/adm_header.ejs")%>
+<div id="topmenu">
+  <button>New Enquiry</button>
+  <button>Pending enquiry</button>
+  <button>closed enquiry</button>
+</div>
+<hr />
+<div>
+  <h3 id="heading">Raise a Enquiry</h3>
+
+  <form action="/admin/enquiry" method="post">
+    <input class="formfield" type="text" name="e_id" hidden id="" value="" />
+
+    <input
+      class="formfield"
+      type="text"
+      name="e_name"
+      id=""
+      placeholder="Full Name"
+      required
+    />
+
+    <input
+      class="formfield"
+      type="text"
+      name="e_mail"
+      id=""
+      placeholder="Mail ID"
+      required
+    />
+
+    <input
+      class="formfield"
+      type="text"
+      name="e_mobile"
+      id=""
+      placeholder="Mobile No."
+      required
+    />
+
+    <select class="formfield" name="e_qualification" id="edu" required>
+      <option value="" selected disabled>Select Qualification</option>
+      <option value="10th">10th</option>
+      <option value="12th">12th</option>
+      <option value="BCA">BCA</option>
+      <option value="B.Com">B.Com</option>
+      <option value="BBA">BBA</option>
+      <option value="BSC">BSC</option>
+      <option value="BA">BA</option>
+      <option value="B.Tech">B.Tech</option>
+      <option value="other">other</option>
+    </select>
+
+    <input
+      class="formfield"
+      type="text"
+      name="e_college"
+      placeholder="College name"
+    />
+    <select class="formfield" name="e_semster" id="sem">
+      <option value="" selected disabled>Choose semster</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+    </select>
+
+    <select class="formfield" name="e_course" id="">
+      <option value="pys">Python(full stack)</option>
+      <option value="jvs">Java(fullstack)</option>
+      <option value="mrs">Mern Stack</option>
+      <option value="mes">Mean Stack</option>
+      <option value="cys">CYber Security</option>
+      <option value="aim">AI & Machine learning</option>
+    </select>
+
+    <input
+      class="formfield"
+      type="text"
+      name="e_city"
+      id="date"
+      placeholder="City"
+    />
+
+    <input
+      class="formfield"
+      type="date"
+      hidden
+      value=""
+      name="e_date"
+      id="date"
+    />
+    <!-- <input type="text" name="e_active" id=""> -->
+    <button>Submit</button>
+  </form>
+</div>
+
+<%- include ("../admin/adm_footer.ejs")%>

@@ -1,0 +1,34 @@
+<%- include ("../admin/adm_header.ejs")%>
+<div id="enqview">
+  <table id="tab">
+    <thead>
+      <tr>
+        <th class="sn">s/n</th>
+        <th class="name">Name</th>
+        <th class="mobile">Mobile</th>
+        <th class="email">Email</th>
+        <th class="course">Course</th>
+        <th class="date">Date</th>
+        <th colspan="4">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%data.enq.map((rec, index)=>{%>
+      <tr class="enqtr">
+        <th class="sn"><%= index+1 %></th>
+        <td class="name"><%=rec.e_name.toLowerCase()%></td>
+        <td class="mobile"><%=rec.e_mobile.toLowerCase()%></td>
+        <td class="email"><%=rec.e_mail.toLowerCase()%></td>
+        <td class="course"><%=rec.e_course.toLowerCase()%></td>
+        <td class="date"><%=rec.e_date.toString().substring(3,16)%></td>
+        <td class="act"><button>call</button></td>
+        <td class="act"><button>mail</button></td>
+        <td class="act"><button>register</button></td>
+        <td class="act"><button><a href="">Delete</a></button></td>
+      </tr>
+      <%})%>
+    </tbody>
+  </table>
+</div>
+
+<%- include ("../admin/adm_footer.ejs")%>
