@@ -1,5 +1,5 @@
-import pool from "./dbconfig.js";
-import timestamp from "./timestamp.js";
+import pool from "./utils/dbconfig.js";
+import timestamp from "./utils/timestamp.js";
 
 function counslerLogin1(data, res) {
   console.log("counsler ka login");

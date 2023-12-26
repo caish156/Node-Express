@@ -1,29 +1,5 @@
 import pool from "./utils/dbconfig.js";
 import timestamp from "./utils/timestamp.js";
-let admindata;
-function adminLogin1(data, res) {
-  pool.query(
-    `Select * from admin WHERE a_id = '${data.key}' and a_password = '${data.s_password}'`,
-    (error, results) => {
-      // console.log(results);
-      if (results.rowCount == 1) {
-        console.log(
-          timestamp(),
-          `POST : Login Success, Admin : ${results.rows[0].a_name}`
-        );
-        res.render("admin/adm_dash", { data: results.rows[0] });
-        console.log(timestamp(), "POST : Render to dashboard");
-        admindata = results.rows[0];
-      } else {
-        console.log(
-          timestamp(),
-          "POST : Login Failed admin ID password Doesn't match"
-        );
-        res.render("login", { msg: "Login Failed.." });
-      }
-    }
-  );
-}
 
 function saveEnquiry(req, res) {
   const formdata = req.body;
@@ -73,5 +49,4 @@ function saveEnquiry(req, res) {
     }
   });
 }
-
-export { saveEnquiry, adminLogin1 };
+export {saveEnquiry}

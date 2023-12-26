@@ -1,8 +1,7 @@
-import pool from "./dbconfig.js";
-import timestamp from "./timestamp.js";
+import pool from "./utils/dbconfig.js";
+import timestamp from "./utils/timestamp.js";
 
 // route for login
-
 
 // route for register
 function studentregister(req, res) {
@@ -54,52 +53,6 @@ function studentAdd(req, res) {
   );
 }
 function studentLogin1(data, res) {
-   // admin login
-  // if (user == "Adm") {
-  //   pool.query(
-  //     `Select * from admin WHERE a_id = '${data.key}' and a_password = '${data.s_password}'`,
-  //     (error, results) => {
-  //       // console.log(results);
-  //       if (results.rowCount == 1) {
-  //         console.log(
-  //           timestamp(),
-  //           `POST : Login Success, Admin : ${results.rows[0].a_name}`
-  //         );
-  //         res.render("adm_dash", { data: results.rows[0] });
-  //         console.log(timestamp(), "POST : Render to dashboard");
-  //       } else {
-  //         console.log(
-  //           timestamp(),
-  //           "POST : Login Failed admin ID password Doesn't match"
-  //         );
-  //         res.render("login", { msg: "Login Failed.." });
-  //       }
-  //     }
-  //   );
-  // }
-  // Counsler login
-  // else if (user == "csl") {
-  //   pool.query(
-  //     `Select * from counsler WHERE c_id = '${data.key}' and c_password = '${data.s_password}'`,
-  //     (error, results) => {
-  //       // console.log(results);
-  //       if (results.rowCount == 1) {
-  //         console.log(
-  //           timestamp(),
-  //           `POST : Login Success, counsler : ${results.rows[0].c_name}`
-  //         );
-  //         res.render("csl_dash", { data: results.rows[0] });
-  //         console.log(timestamp(), "POST : Render to dashboard");
-  //       } else {
-  //         console.log(
-  //           timestamp(),
-  //           "POST : Login Failed csl ID password Doesn't match"
-  //         );
-  //         res.render("login", { msg: "Login Failed.." });
-  //       }
-  //     }
-  //   );
-  // } else {
   pool.query(
     `Select * from itstack_student WHERE (s_id = '${data.key}' or s_mobile ='${data.key}') and s_password = '${data.s_password}'`,
     (error, results) => {

@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "db:deploy": "node models/pgconfig.js",
-    "db:create": "node models/createdatabase.js",
+    "db:deploy": "node models/utils/pgconfig.js",
+    "db:create": "node models/utils/createdatabase.js",
     "database": "npm run db:deploy && npm run db:create"
   },
   "author": "",

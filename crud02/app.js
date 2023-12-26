@@ -2,11 +2,12 @@ import express, { response } from "express";
 import dotenv from "dotenv";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-import timestamp from "./models/timestamp.js";
-import student_routes, { studentLogin } from "./routes/student_routes.js";
-import admin_routes, { adminLogin } from "./routes/admin_routes.js";
-import { counslerLogin } from "./routes/counsler_routes.js";
-import enquiry_routes from './routes/enquiry_routes.js'
+import admin_routes from "./routes/admin_routes.js";
+import batch_routes from "./routes/batch_routes.js";
+import common_routes from "./routes/common_routes.js";
+import enquiry_routes from "./routes/enquiry_routes.js";
+import student_routes from "./routes/student_routes.js";
+import counsler_routes from "./routes/counsler_routes.js";
 
 const server = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -16,34 +17,12 @@ dotenv.config();
 server.set("view engine", "ejs");
 server.use(express.static(path.join(__dirname, "assets")));
 server.use(express.urlencoded({ extended: true }));
-
-server.get("/", (req, res) => {
-  res.render("home");
-  console.log(timestamp(), "GET : Welcome to HomePage");
-});
-
-server.get("/login", (req, res) => {
-  res.render("login", { msg: "" });
-  console.log(timestamp(), "GET : Render to login");
-});
-
-server.post("/login", (req, res) => {
-  const data = req.body;
-  console.log(data);
-  let user = data.key.substring(0, 3);
-  if (user == "Adm") {
-    adminLogin(data, res);
-  } else if (user == "cls") {
-    counslerLogin(data, res);
-  } else {
-    studentLogin(data, res);
-  }
-});
-
+server.use("/", common_routes);
+server.use("/counsler", counsler_routes);
 server.use("/student", student_routes);
 server.use("/admin", admin_routes);
 server.use("/enquiry", enquiry_routes);
-
+server.use("/batch", batch_routes);
 server.listen(process.env.port, () => {
   console.log("server listining on port " + process.env.port);
 });
