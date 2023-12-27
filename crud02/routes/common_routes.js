@@ -1,6 +1,6 @@
 import express from "express";
 
-import { homePage, loginPage, login } from "../models/common_model.js";
+import { homePage, loginPage, login } from "../controllers/common_model.js";
 
 const router = express.Router();
 

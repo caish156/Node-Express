@@ -1,5 +1,5 @@
 import express from "express";
-import { saveEnquiry } from "../models/admin_model.js";
+import { saveEnquiry } from "../controllers/admin_model.js";
 const router = express.Router();
 
 

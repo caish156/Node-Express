@@ -4,7 +4,7 @@ import {
   studentAdd,
   studentLogin1,
   studentcount,
-} from "../models/students_model.js";
+} from "../controllers/students_model.js";
 
 const router = express.Router();
 router.use(express.urlencoded({ extended: true }));
