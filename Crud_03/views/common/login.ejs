@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <div class="title">
+      <header class="" role="header">
+        <h4>Register For <em>Offline Course</em> and get free placement</h4>
+      </header>
+    </div>
+    <div class="main">
+      <div class="login">
+        <form method="post"  action="/login">
+          <label for="chk" aria-hidden="true"><%= msg? msg:"Log in"%></label>
+          <input type="Text" name="key" placeholder="Roll No. or Mobile" required="" />
+
+          <input
+            type="password"
+            name="s_password"
+            placeholder="Password"
+            required
+          />
+          <button>Log in</button><button>Forgot Roll no...!</button>
+        </form>
+      </div>
+
+      <div class="signup">
+        <a href="/student/register"><button>signup</button></a>
+      </div>
+    </div>
+</body>
+</html>

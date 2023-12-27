@@ -1,0 +1,42 @@
+<%- include("../common/header.ejs")%>
+<!-- <div id="topmenu">
+   <button>Active Enquiry</button>
+  <button>Closed Enquiry</button>
+</div> -->
+
+<table id="enqtable">
+  <thead>
+    <tr>
+      <th>s/n</th>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Email</th>
+
+      <th>Course</th>
+      <th>Date</th>
+      <th colspan="4">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%result.map((rec, index)=>{%>
+    <tr class="enqtr <%= rec.dataValues.active?'green': 'red' %>">
+      <td class="sn"><%= index+1 %></td>
+      <td class="name"><%= rec.dataValues.name.toString().toLowerCase()%></td>
+      <td class="mobile"><%=rec.dataValues.mobile%></td>
+      <td class="email"><%=rec.dataValues.mail%></td>
+      <td class="course"><%=rec.dataValues.course%></td>
+      <td class="date">
+        <%=rec.dataValues.createdAt.toString().substring(4, 15);%>
+      </td>
+      <td class="act"><button>call</button></td>
+      <td class="act"><button>mail</button></td>
+      <td class="act"><button>register</button></td>
+      <td class="act">
+        <button><a href="">Delete</a></button>
+      </td>
+    </tr>
+    <%})%>
+  </tbody>
+</table>
+
+<%- include("../common/footer.ejs")%>
