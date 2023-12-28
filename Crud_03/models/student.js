@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Student extends Model {
     /**
@@ -15,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Student.init(
     {
-      roll: DataTypes.STRING,
+      id: {
+        type:DataTypes.STRING,
+        primaryKey: true,
+      },
       name: DataTypes.STRING,
       image: DataTypes.STRING,
       mobile: DataTypes.STRING,

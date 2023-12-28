@@ -5,31 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href=".././css/admin.css" />
     <link rel="stylesheet" href=".././css/enquiry.css" />
+    <link rel="stylesheet" href=".././css/register.css" />
     <title>Document</title>
   </head>
   <body>
     <div id="main">
       <header>
         <div class="header" id="lefth">
-          <p>Admin Dashboard <b> </b></p>
-          <p>WELCOME <%= user %></p>
+          <div>
+            <p><b><%=user.role%>'s </b> Dashboard </p>
+            <p>ID : <b><%=user.id%> </b></p>
+          </div>
+          <p>WELCOME <%= user.name %></p>
         </div>
         <div class="header" id="righth">
           <a class="navlink" href="/">Home</a>
           <a class="navlink" href="">Quick view</a>
-          <a class="navlink" href="">Logout</a>
+          <a class="navlink" href="/logout">Logout</a>
         </div>
       </header>
       <div id="area">
         <div id="sidebar">
           <a class="bullets" id="Enquries" href="/enquiry">Enquries</a>
-          <a class="bullets">Students</a>
+          <a class="bullets" href="/student/add">Students</a>
           <p class="bullets">Course</p>
           <p class="bullets">Batches</p>
           <p class="bullets">Fees</p>
           <p class="bullets">Faculties</p>
-          <p class="bullets"  id="Counslers" href="/counslers">Counslers</p>
+          <p class="bullets" id="Counslers" href="/counslers">Counslers</p>
         </div>
         <div id="mainbar">
-          
-      

@@ -1,0 +1,135 @@
+<%- include("../common/header.ejs")%>
+
+<form class="formarea" action="/student/add" method="post">
+  <div id="fillup">
+    <input
+      class="fields"
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Full Name"
+      required
+    />
+    <input
+      class="fields"
+      type="text"
+      name="image"
+      placeholder="Passport photo URL"
+    />
+    <input
+      class="fields"
+      name="mobile"
+      type="text"
+      id="mobile"
+      maxlength="10"
+      minlength="10"
+      placeholder="Mobile No."
+      required
+    /><input
+      class="fields"
+      name="email"
+      type="email"
+      placeholder="Mail ID"
+      required
+    /><input
+      class="fields"
+      name="fa_name"
+      type="text"
+      placeholder="Father Name"
+      required
+    /><input
+      class="fields"
+      name="fa_mobile"
+      maxlength="10"
+      minlength="10"
+      type="text"
+      placeholder="Parent's contact"
+      required
+    />
+    <div class="fields">
+      <label class="label" for="edu">Select Your Education</label>
+      <select name="qualification" id="edu" required>
+        <option value="10th">10th</option>
+        <option value="12th">12th</option>
+        <option value="BCA">BCA</option>
+        <option value="B.Com">B.Com</option>
+        <option value="BBA">BBA</option>
+        <option value="BSC">BSC</option>
+        <option value="BA">BA</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="other">other</option>
+      </select>
+    </div>
+    <input
+      class="fields"
+      name="college"
+      type="text"
+      placeholder="College Name"
+      required
+    />
+    <div class="fields">
+      <label class="label" for="edu">Select Your Semster</label>
+      <select name="semster" id="sem">
+        <option value="" selected>None</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+    </div>
+    <input
+      type="text"
+      class="fields"
+      name="passout"
+      placeholder="passing year"
+    />
+    <input class="fields" name="address" type="text" placeholder="Address" />
+    <input
+      class="fields"
+      name="city"
+      type="text"
+      placeholder="City"
+      required
+    />
+    <input
+      class="fields"
+      name="pincode"
+      type="text"
+      placeholder="Pincode"
+      required
+    />
+    <input
+      class="fields"
+      name="password"
+      maxlength="8"
+      minlength="8"
+      type="text"
+      id="pass"
+      placeholder="Password"
+      required
+    />
+    <input
+      class="fields"
+      maxlength="8"
+      minlength="8"
+      type="text"
+      id="confirmpass"
+      placeholder="Confirm Password"
+      required
+    />
+  </div>
+
+  <div id="submission">
+    <button id="add" type="submit" class="fields">Submit</button>
+  </div>
+</form>
+<div id="notification">
+    <h3><%= msg%></h3>
+
+</div>
+
+<%- include("../common/footer.ejs")%>

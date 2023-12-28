@@ -3,8 +3,8 @@ const { Enquiry } = require("../models");
 
 router.get("/", async (req, res) => {
   const result = await Enquiry.findAll();
-  console.log(result);
-  res.render("enquiry/viewenq", { result, user: "Admin" });
+  console.log(result, req.session.user);
+  res.render("enquiry/viewenq", {result, user: req.session.user });
 });
 
 router.post("/add", async (req, res) => {

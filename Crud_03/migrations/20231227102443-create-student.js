@@ -3,7 +3,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Students", {
-      roll: {
+      id: {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.STRING,
