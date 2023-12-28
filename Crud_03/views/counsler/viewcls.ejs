@@ -1,32 +1,33 @@
 <%- include("../common/header.ejs")%>
 <div id="topmenu">
-   <button>Add New Counsler</button>
-  <button>Update Counsler Data</button>
+  <a class="menubutton" href="counslers/add">Add New Counsler</a>
+  <button class="menubutton">Update Counsler Data</button>
 </div>
 
 <table id="enqtable">
   <thead>
     <tr>
       <th>s/n</th>
+      <th>Id</th>
       <th>Name</th>
       <th>Mobile</th>
       <th>Email</th>
       <th colspan="3">Action</th>
-
-     
     </tr>
   </thead>
   <tbody>
     <%result.map((rec, index)=>{%>
-    
+    <tr>
       <td class="sn"><%= index+1 %></td>
-      <td class="name"><%= rec.dataValues.name.toString().toLowerCase()%></td>
+      <td class="sn"><%= rec.id%></td>
+      <td class="name"><%= rec.name%></td>
       <td class="mobile"><%=rec.dataValues.mobile%></td>
-      <td class="email"><%=rec.dataValues.mail%></td>
-     
+      <td class="email"><%=rec.dataValues.email%></td>
+
       <td class="act"><button>call</button></td>
       <td class="act"><button>mail</button></td>
-       <button><a href="">Remove</a></button>
+      <td class="act">
+        <button><a href="">Remove</a></button>
       </td>
     </tr>
     <%})%>

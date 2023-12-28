@@ -12,11 +12,11 @@
     <div id="main">
       <header>
         <div class="header" id="lefth">
-          <div>
+          <div >
             <p><b><%=user.role%>'s </b> Dashboard </p>
             <p>ID : <b><%=user.id%> </b></p>
           </div>
-          <p>WELCOME <%= user.name %></p>
+          <p>WELCOME <%= user.name.toUpperCase() %></p>
         </div>
         <div class="header" id="righth">
           <a class="navlink" href="/">Home</a>
@@ -32,6 +32,6 @@
           <p class="bullets">Batches</p>
           <p class="bullets">Fees</p>
           <p class="bullets">Faculties</p>
-          <p class="bullets" id="Counslers" href="/counslers">Counslers</p>
+          <a class="bullets" id="Counslers" href="/counslers">Counslers</a>
         </div>
         <div id="mainbar">

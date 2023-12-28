@@ -8,6 +8,12 @@ router.get("/", (req, res) => {
 router.get("/add", (req, res) => {
   res.render("student/addnew", { msg: "", user: req.session.user });
   console.log(req.body);
+} );
+router.get( "/view", async ( req, res ) =>
+{
+  const result = await Student.findAll();
+  res.render("student/viewall", { result, user: req.session.user });
+
 });
 
 router.post("/add", async (req, res) => {
@@ -45,7 +51,10 @@ router.post("/add", async (req, res) => {
     role: "Student",
   } );
   
-   res.render("student/addnew", { msg: `New Registration with Roll no.${register.id}`, user: req.session.user });
+   res.render("student/addnew", {
+     msg: `New Registration for ${register.role} with Roll no.${register.id}`,
+     user: req.session.user,
+   });
 });
 
 module.exports = router;

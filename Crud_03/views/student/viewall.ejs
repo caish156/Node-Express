@@ -1,0 +1,39 @@
+<%- include("../common/header.ejs")%>
+
+<table id="enqtable">
+  <thead>
+    <tr>
+      <th>s/n</th>
+      <th>Roll</th>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Father Name</th>
+      <th>qualification</th>
+      <th>passing year</th>
+      <th>Address</th>
+      <th>Date</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%result.map((rec, index)=>{%>
+    <tr class="enqtr <%= rec.dataValues.active?'green': 'red' %>">
+      <td class="sn"><%= index+1 %></td>
+      <td class="name"><%= rec.id%></td>
+      <td class="mobile"><%=rec.name%></td>
+      <td class="email"><%=rec.mobile%></td>
+      <td class="course"><%=rec.email%></td>
+      <td class="course"><%=rec.fa_name%></td>
+      <td class="course"><%=rec.qualification%></td>
+      <td class="course"><%=rec.passout%></td>
+      <td class="course"><%=rec.address%></td>
+      <td class="date"><%=rec.createdAt.toString().substring(4, 15);%></td>
+      <td class="act"><button>Edit</button></td>
+      <td class="act"><button>Passout</button></td>
+    </tr>
+    <%})%>
+  </tbody>
+</table>
+
+<%- include("../common/footer.ejs")%>

@@ -51,6 +51,7 @@ header {
   width: 75vw;
   height: 90vh;
   border: 1px solid rgb(14, 13, 13);
+  overflow-y: scroll;
 }
 .bullets {
   display: flex;

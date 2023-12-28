@@ -1,5 +1,7 @@
 <%- include("../common/header.ejs")%>
-
+<div id="topmenu">
+  <a href="/student/view" class="menubutton">viewall</a>
+</div>
 <form class="formarea" action="/student/add" method="post">
   <div id="fillup">
     <input
@@ -88,13 +90,7 @@
       placeholder="passing year"
     />
     <input class="fields" name="address" type="text" placeholder="Address" />
-    <input
-      class="fields"
-      name="city"
-      type="text"
-      placeholder="City"
-      required
-    />
+    <input class="fields" name="city" type="text" placeholder="City" required />
     <input
       class="fields"
       name="pincode"
@@ -128,8 +124,7 @@
   </div>
 </form>
 <div id="notification">
-    <h3><%= msg%></h3>
-
+  <h3><%= msg%></h3>
 </div>
 
 <%- include("../common/footer.ejs")%>

@@ -1,0 +1,61 @@
+<%- include("../common/header.ejs")%>
+<div id="topmenu">
+  <a href="/counslers" class="menubutton">viewall</a>
+</div>
+<form class="formarea" action="/counslers/add" method="post">
+  <div id="fillup">
+    <input
+      class="fields"
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Full Name"
+      required
+    />
+   
+    <input
+      class="fields"
+      name="mobile"
+      type="text"
+      id="mobile"
+      maxlength="10"
+      minlength="10"
+      placeholder="Mobile No."
+      required
+    /><input
+      class="fields"
+      name="email"
+      type="email"
+      placeholder="Mail ID"
+      required
+    />
+    <input
+      class="fields"
+      name="password"
+      maxlength="8"
+      minlength="8"
+      type="text"
+      id="pass"
+      placeholder="Password"
+      required
+    />
+    <input
+      class="fields"
+      maxlength="8"
+      minlength="8"
+      type="text"
+      id="confirmpass"
+      placeholder="Confirm Password"
+      required
+    />
+  </div>
+
+  <div id="submission">
+    <button id="add" type="submit" class="fields">Submit</button>
+  </div>
+</form>
+<div id="notification">
+  <h3><%= msg%></h3>
+</div>
+
+<%- include("../common/footer.ejs")%>
